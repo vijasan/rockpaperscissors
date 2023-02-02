@@ -1,3 +1,5 @@
+// This code is written with help from Chat GPT (https://chat.openai.com/chat) and with inspiration from an old assignment from theme 4 (animation)
+
 const options = ["rock", "paper", "scissors"];
 const buttons = document.querySelectorAll("button"); // select all buttons
 const player1 = document.querySelector("#player1"); // select player 1
