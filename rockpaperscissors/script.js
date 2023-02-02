@@ -13,21 +13,21 @@ buttons.forEach((button) => {
     player1.className = `player ${playerChoice} shake`; // update player 1's class
     player2.className = `player ${computerChoice} shake`; // update player 2's class
 
-    if (playerChoice === computerChoice) {
-      draw.classList.remove("hidden"); // show draw result
-    } else if (
-      (playerChoice === "rock" && computerChoice === "scissors") ||
-      (playerChoice === "paper" && computerChoice === "rock") ||
-      (playerChoice === "scissors" && computerChoice === "paper")
-    ) {
-      win.classList.remove("hidden"); // show win result
-    } else {
-      lose.classList.remove("hidden"); // show lose result
-    }
-
     setTimeout(function () {
       player1.classList.remove("shake"); // remove shake animation from player 1
       player2.classList.remove("shake"); // remove shake animation from player 2
+
+      if (playerChoice === computerChoice) {
+        draw.classList.remove("hidden"); // show draw result
+      } else if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+      ) {
+        win.classList.remove("hidden"); // show win result
+      } else {
+        lose.classList.remove("hidden"); // show lose result
+      }
     }, 500);
   });
 });
@@ -36,9 +36,9 @@ buttons.forEach((button) => {
 const retryButton = document.createElement("button");
 retryButton.innerHTML = "Retry";
 document.body.appendChild(retryButton);
+retryButton.classList.add("retry-button"); // adds retry-button class
 
 retryButton.addEventListener("click", function () {
-  retryButton.classList.add("retry-button");
   win.classList.add("hidden");
   lose.classList.add("hidden");
   draw.classList.add("hidden");
